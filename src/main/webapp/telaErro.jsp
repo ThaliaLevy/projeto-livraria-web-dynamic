@@ -32,8 +32,8 @@
 </header>
 <main>
 <div class="container" style="margin-top: 100px; text-align: right; width: 500px;"> 
-<h5>Cadastro Não realizado.</h5><hr><br>
-<%request.getAttribute("mensagemErro");%>
+<h5>Cadastro não realizado.</h5><hr><br>
+<%= request.getAttribute("mensagemErro") %>
  </div>
 </main>
 <footer>
