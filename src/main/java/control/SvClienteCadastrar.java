@@ -7,34 +7,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class SvClienteCadastrar
- */
+import model.entidade.Cliente;
+
 @WebServlet("/SvClienteCadastrar")
 public class SvClienteCadastrar extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SvClienteCadastrar() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String nomeCliente = request.getParameter("nomeCliente");
+		int idade = Integer.parseInt(request.getParameter("idade"));
+		String sexo = request.getParameter("sexo");
+		String senha = request.getParameter("senha");
+		int cpf = Integer.parseInt(request.getParameter("cpf"));
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		Cliente c = new Cliente(nomeCliente, idade, sexo, senha, cpf);
+		if (c.guardarDados() == true) {
+			
+		} else {
+
+		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
