@@ -4,6 +4,8 @@ import model.entidade.Cliente;
 
 public class PCliente {
 	public boolean salvarDados(Cliente c) {
+		String mensagemErro; 
+		
 		Conexao cn = new Conexao();
 		try {
 			cn.sql = "create database if not exists BDLivraria;";
@@ -28,9 +30,9 @@ public class PCliente {
 			cn.ps.execute();
 
 			cn.conn.close();
-			
 			return true;
 		} catch (Exception e) {
+			mensagemErro = "Erro" + e;
 			return false;
 		}
 	}
