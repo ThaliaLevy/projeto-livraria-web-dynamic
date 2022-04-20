@@ -3,8 +3,8 @@ package model.persistencia;
 import model.entidade.Cliente;
 
 public class PCliente {
+	public String mensagemErro; 
 	public boolean salvarDados(Cliente c) {
-		String mensagemErro; 
 		
 		Conexao cn = new Conexao();
 		try {

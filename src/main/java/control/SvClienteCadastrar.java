@@ -19,12 +19,15 @@ public class SvClienteCadastrar extends HttpServlet {
 		String sexo = request.getParameter("sexo");
 		String senha = request.getParameter("senha");
 		int cpf = Integer.parseInt(request.getParameter("cpf"));
+		String mensagemErro;
 
 		Cliente c = new Cliente(nomeCliente, idade, sexo, senha, cpf);
 		if (c.guardarDados() == true) {
-			
+			request.getRequestDispatcher("telaSucesso.jsp").forward(request, response);
 		} else {
-
+			mensagemErro = c.mensagemErro;
+			request.setAttribute("mensagemErro", mensagemErro);
+			request.getRequestDispatcher("telaErro.jsp").forward(request, response);
 		}
 	}
 

@@ -4,6 +4,7 @@ import model.persistencia.PCliente;
 
 public class Cliente {
 	private String nomeCliente, sexo, senha;
+	public String mensagemErro;
 	private int idade, cpf;
 
 	public Cliente() {
@@ -24,6 +25,7 @@ public class Cliente {
 		if(pc.salvarDados(this) == true) {
 			return true;
 		}else {
+			mensagemErro = pc.mensagemErro;
 			return false;
 		}
 	}
