@@ -32,7 +32,7 @@ public class PCliente {
 			cn.conn.close();
 			return true;
 		} catch (Exception e) {
-			mensagemErro = "Erro" + e;
+			mensagemErro = "Erro: " + e;
 			return false;
 		}
 	}
