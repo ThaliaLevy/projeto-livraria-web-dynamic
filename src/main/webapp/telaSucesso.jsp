@@ -36,7 +36,7 @@
  </div>
 </main>
 <footer>
-<hr style="margin-top: 190px;">
+<hr style="margin-top: 320px;">
 <p style="color:  rgb(173, 169, 169); font-size: 12px; margin-left: 20px;">fictício, apenas para exercitar java web</p>
 <hr>
 </footer>
