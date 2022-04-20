@@ -22,13 +22,11 @@ public class SvClienteCadastrar extends HttpServlet {
 		String mensagemErro;
 
 		Cliente c = new Cliente(nomeCliente, idade, sexo, senha, cpf);
-		if (c.guardarDados() == true) {
-			request.getRequestDispatcher("telaSucesso.jsp").forward(request, response);
-		} else {
+		if (c.guardarDados() == false) {
 			mensagemErro = c.mensagemErro;
 			request.setAttribute("mensagemErro", mensagemErro);
-			request.getRequestDispatcher("telaErro.jsp").forward(request, response);
 		}
+		request.getRequestDispatcher("cliente.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

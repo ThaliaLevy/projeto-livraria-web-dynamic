@@ -22,13 +22,11 @@ public class SvLivroCadastrar extends HttpServlet {
 		String mensagemErro;
 
 		Livro l = new Livro(nomeLivro, autor, numeroPaginas, editora, preco);
-		if (l.guardarDados() == true) {
-			request.getRequestDispatcher("telaSucesso.jsp").forward(request, response);
-		} else {
+		if (l.guardarDados() == false) {
 			mensagemErro = l.mensagemErro;
 			request.setAttribute("mensagemErro", mensagemErro);
-			request.getRequestDispatcher("telaErro.jsp").forward(request, response);
 		}
+		request.getRequestDispatcher("livro.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

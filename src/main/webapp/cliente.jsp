@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Principal</title>
+<title>Cadastrar cliente</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
@@ -21,7 +21,7 @@
         <a class="nav-link" href="livro.html" style="color: rgb(173, 169, 169)">Cadastrar livro</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="cliente.html" style="color: rgb(173, 169, 169)">Cadastrar cliente</a>
+        <a class="nav-link" href="cliente.html" style="color: white">Cadastrar cliente</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="funcionario.html" style="color: rgb(173, 169, 169)">Cadastrar funcionário</a>
@@ -32,11 +32,20 @@
 </header>
 <main>
 <div class="container" style="margin-top: 100px; text-align: right; width: 500px;"> 
-<h5>Cadastro realizado com sucesso!</h5><hr><br>
+<%= request.getAttribute("mensagemErro")==null?"":request.getAttribute("mensagemErro") %>
+<h5>Insira as informações do cliente</h5><hr><br>
+<form action="SvClienteCadastrar" method="post">
+<label>Nome: <input type="text" name="nomeCliente" value="<%= request.getParameter("nomeCliente")==null?"":request.getParameter("nomeCliente")%>"></label><br>
+<label>Idade: <input type="text" name="idade" value="<%= request.getParameter("idade")==null?"":request.getParameter("idade")%>"></label><br>
+<label>Sexo: <input type="text" name="sexo" value="<%= request.getParameter("sexo")==null?"":request.getParameter("sexo")%>"></label><br>
+<label>Senha: <input type="text" name="senha" value="<%= request.getParameter("senha")==null?"":request.getParameter("senha")%>"></label><br>
+<label>CPF: <input type="text" name="cpf" value="<%= request.getParameter("cpf")==null?"":request.getParameter("cpf")%>"></label><br>
+<input type="submit" value="Cadastrar"/>
+</form>
  </div>
 </main>
 <footer>
-<hr style="margin-top: 320px;">
+<hr style="margin-top: 100px;">
 <p style="color:  rgb(173, 169, 169); font-size: 12px; margin-left: 20px;">fictício, apenas para exercitar java web</p>
 <hr>
 </footer>
