@@ -18,13 +18,24 @@ public class Cliente {
 		this.senha = senha;
 		this.cpf = cpf;
 	}
-	
-	public boolean guardarDados(){
+
+	public boolean guardarDados() {
 		PCliente pc = new PCliente();
-		
-		if(pc.salvarDados(this) == true) {
+
+		if (pc.salvarDados(this) == true) {
 			return true;
-		}else {
+		} else {
+			mensagemErro = pc.mensagemErro;
+			return false;
+		}
+	}
+
+	public boolean verificarDados() {
+		PCliente pc = new PCliente();
+
+		if (pc.pesquisarDados(this) == true) {
+			return true;
+		} else {
 			mensagemErro = pc.mensagemErro;
 			return false;
 		}

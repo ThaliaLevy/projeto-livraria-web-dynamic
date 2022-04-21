@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.entidade.Cliente;
 
-@WebServlet("/SvClienteCadastrar")
-public class SvClienteCadastrar extends HttpServlet {
+@WebServlet("/SvClientePesquisar")
+public class SvClientePesquisar extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeCliente = request.getParameter("nomeCliente");
 		int idade = Integer.parseInt(request.getParameter("idade"));
 		String sexo = request.getParameter("sexo");
@@ -22,15 +22,14 @@ public class SvClienteCadastrar extends HttpServlet {
 		String mensagemErro;
 
 		Cliente c = new Cliente(nomeCliente, idade, sexo, senha, cpf);
-		if (c.guardarDados() == false) {
+		if (c.verificarDados() == false) {
 			mensagemErro = c.mensagemErro;
 			request.setAttribute("mensagemErro", mensagemErro);
 		}
-		request.getRequestDispatcher("clienteCadastrar.jsp").forward(request, response);
+		request.getRequestDispatcher("clientePesquisar.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 

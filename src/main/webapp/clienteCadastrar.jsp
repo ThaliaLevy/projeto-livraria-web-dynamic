@@ -17,14 +17,35 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="index.html" style="color: rgb(173, 169, 169)">Principal</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <a class="nav-link" href="livro.html" style="color: rgb(173, 169, 169)">Cadastrar livro</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="livro.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
+          Livro
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Cadastrar</a>
+          <a class="dropdown-item" href="#">Pesquisar</a>
+          <a class="dropdown-item" href="#">Excluir</a>
+        </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="cliente.html" style="color: white">Cadastrar cliente</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="cliente.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+          Cliente
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="clienteCadastrar.jsp">Cadastrar</a>
+          <a class="dropdown-item" href="clientePesquisar.jsp">Pesquisar</a>
+          <a class="dropdown-item" href="cliente.jsp">Excluir</a>
+        </div>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="funcionario.html" style="color: rgb(173, 169, 169)">Cadastrar funcionário</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="funcionario.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
+          Funcionário
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Cadastrar</a>
+          <a class="dropdown-item" href="#">Pesquisar</a>
+          <a class="dropdown-item" href="#">Excluir</a>
+        </div>
       </li>
     </ul>
   </div>
