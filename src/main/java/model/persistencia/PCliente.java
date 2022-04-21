@@ -24,10 +24,10 @@ public class PCliente {
 			cn.sql = "insert into Cliente(nome, idade, sexo, senha, cpf) values(?, ?, ?, ?, ?)";
 			cn.ps = cn.conn.prepareStatement(cn.sql);
 			cn.ps.setString(1, c.getNomeCliente());
-			cn.ps.setInt(2, c.getIdade());
+			cn.ps.setString(2, c.getIdade());
 			cn.ps.setString(3, c.getSexo());
 			cn.ps.setString(4, c.getSenha());
-			cn.ps.setInt(5, c.getCpf());
+			cn.ps.setString(5, c.getCpf());
 			cn.ps.execute();
 
 			cn.conn.close();
@@ -52,7 +52,7 @@ public class PCliente {
 			cn.sql = "select * from cliente where ?='?'";
 			cn.ps = cn.conn.prepareStatement(cn.sql);
 			cn.ps.setString(1, "nome");
-			cn.ps.setString(2, "cliente 1");
+			cn.ps.setString(2, c.getNomeCliente());
 			cn.ps.execute();
 
 			cn.conn.close();

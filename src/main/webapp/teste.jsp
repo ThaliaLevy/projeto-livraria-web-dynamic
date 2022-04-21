@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-aqui  <%= request.getParameter("cadastrarCliente") %>;
+aqui  <%= request.getParameter("nomeCliente") %>;<br>
+<label>Idade: <input type="text" name="idade" value="<%= request.getParameter("idade")==null?"":request.getParameter("idade")%>"></label><br>
 </body>
 </html>

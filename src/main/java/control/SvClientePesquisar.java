@@ -15,12 +15,13 @@ public class SvClientePesquisar extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeCliente = request.getParameter("nomeCliente");
-		int idade = Integer.parseInt(request.getParameter("idade"));
+		String idade = request.getParameter("idade");
 		String sexo = request.getParameter("sexo");
 		String senha = request.getParameter("senha");
-		int cpf = Integer.parseInt(request.getParameter("cpf"));
+		String cpf = request.getParameter("cpf");
 		String mensagemErro;
 
+		
 		Cliente c = new Cliente(nomeCliente, idade, sexo, senha, cpf);
 		if (c.verificarDados() == false) {
 			mensagemErro = c.mensagemErro;

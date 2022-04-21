@@ -3,15 +3,14 @@ package model.entidade;
 import model.persistencia.PCliente;
 
 public class Cliente {
-	private String nomeCliente, sexo, senha;
+	private String nomeCliente, sexo, senha, idade, cpf;
 	public String mensagemErro;
-	private int idade, cpf;
 
 	public Cliente() {
 
 	}
 
-	public Cliente(String nomeCliente, int idade, String sexo, String senha, int cpf) {
+	public Cliente(String nomeCliente, String idade, String sexo, String senha, String cpf) {
 		this.nomeCliente = nomeCliente;
 		this.idade = idade;
 		this.sexo = sexo;
@@ -32,13 +31,13 @@ public class Cliente {
 
 	public boolean verificarDados() {
 		PCliente pc = new PCliente();
-
-		if (pc.pesquisarDados(this) == true) {
+		if(nomeCliente != null) {
+			pc.pesquisarDados(this);
 			return true;
-		} else {
-			mensagemErro = pc.mensagemErro;
+		}else{
 			return false;
 		}
+
 	}
 
 	public String getNomeCliente() {
@@ -65,19 +64,19 @@ public class Cliente {
 		this.senha = senha;
 	}
 
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
 
-	public void setIdade(int idade) {
+	public void setIdade(String idade) {
 		this.idade = idade;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 }

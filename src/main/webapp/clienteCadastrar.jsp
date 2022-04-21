@@ -28,7 +28,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="cliente.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+        <a class="nav-link dropdown-toggle" href="clienteCadastrar.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
           Cliente
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
