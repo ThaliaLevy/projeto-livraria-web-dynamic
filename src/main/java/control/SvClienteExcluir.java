@@ -7,35 +7,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class SvClienteExcluir
- */
+import model.entidade.Cliente;
+import model.persistencia.PCliente;
+
 @WebServlet("/SvClienteExcluir")
 public class SvClienteExcluir extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SvClienteExcluir() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String cpf = request.getParameter("cpf");
+		String mensagem = "Erro ao tentar excluir cadastro.", mensagemParaProgramador;
+
+		Cliente c = new Cliente();
+
+		if (c.excluirPeloCpf(cpf) == true) {
+			mensagem = "Excluído com sucesso!";
+
+		} else {
+			PCliente pc = new PCliente();
+			mensagemParaProgramador = pc.mensagem;
+			request.setAttribute("mensagemParaProgramador", mensagemParaProgramador);
+		}
+
+		//mensagem de erro não está aparecendo quando não há o cpf cadastrado.
+		//verificar como resolver isso.
+		request.setAttribute("mensagem", mensagem);
+		request.getRequestDispatcher("clienteExcluir.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

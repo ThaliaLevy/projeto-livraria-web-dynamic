@@ -3,7 +3,7 @@ package model.persistencia;
 import model.entidade.Cliente;
 
 public class PCliente {
-	public String mensagemErro;
+	public String mensagem;
 
 	public boolean salvarDados(Cliente c) {
 
@@ -31,34 +31,32 @@ public class PCliente {
 			cn.ps.execute();
 
 			cn.conn.close();
+			
 			return true;
 		} catch (Exception e) {
-			mensagemErro = "Erro: " + e;
+			mensagem = "Erro: " + e;
 			return false;
 		}
 	}
-
-	public boolean pesquisarDados(Cliente c) {
+	
+	public boolean excluirDados(String cpf) {
+		
 		Conexao cn = new Conexao();
 		try {
-			cn.sql = "create database if not exists BDLivraria;";
-			cn.ps = cn.conn.prepareStatement(cn.sql);
-			cn.ps.execute();
-
 			cn.sql = "use BDLivraria;";
 			cn.ps = cn.conn.prepareStatement(cn.sql);
 			cn.ps.execute();
 
-			cn.sql = "select * from cliente where ?='?'";
+			cn.sql = "delete from Cliente where cpf = ?;";
 			cn.ps = cn.conn.prepareStatement(cn.sql);
-			cn.ps.setString(1, "nome");
-			cn.ps.setString(2, c.getNomeCliente());
+			cn.ps.setString(1, cpf);
 			cn.ps.execute();
 
 			cn.conn.close();
+			
 			return true;
 		} catch (Exception e) {
-			mensagemErro = "Erro: " + e;
+			mensagem = "Erro: " + e;
 			return false;
 		}
 	}

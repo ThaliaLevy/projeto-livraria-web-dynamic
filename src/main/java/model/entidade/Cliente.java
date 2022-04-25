@@ -4,7 +4,6 @@ import model.persistencia.PCliente;
 
 public class Cliente {
 	private String nomeCliente, sexo, senha, idade, cpf;
-	public String mensagemErro;
 
 	public Cliente() {
 
@@ -24,20 +23,18 @@ public class Cliente {
 		if (pc.salvarDados(this) == true) {
 			return true;
 		} else {
-			mensagemErro = pc.mensagemErro;
 			return false;
 		}
 	}
-
-	public boolean verificarDados() {
+	
+	public boolean excluirPeloCpf(String cpf) {
 		PCliente pc = new PCliente();
-		if(nomeCliente != null) {
-			pc.pesquisarDados(this);
+		
+		if (pc.excluirDados(cpf) == true) {
 			return true;
-		}else{
+		} else {
 			return false;
 		}
-
 	}
 
 	public String getNomeCliente() {

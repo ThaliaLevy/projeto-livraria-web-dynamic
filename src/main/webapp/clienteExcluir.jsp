@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Pesquisar cliente</title>
+<title>Excluir cadastro</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
@@ -18,32 +18,29 @@
     <a class="navbar-brand" href="index.html" style="color: rgb(173, 169, 169)">Principal</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="livro.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
           Livro
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Cadastrar</a>
-          <a class="dropdown-item" href="#">Pesquisar</a>
           <a class="dropdown-item" href="#">Excluir</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="cliente.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
           Cliente
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="clienteCadastrar.jsp">Cadastrar</a>
-          <a class="dropdown-item" href="clientePesquisar.jsp">Pesquisar</a>
-          <a class="dropdown-item" href="cliente.jsp">Excluir</a>
+          <a class="dropdown-item" href="clienteExcluir.jsp">Excluir</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="funcionario.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
           Funcionário
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Cadastrar</a>
-          <a class="dropdown-item" href="#">Pesquisar</a>
           <a class="dropdown-item" href="#">Excluir</a>
         </div>
       </li>
@@ -53,15 +50,12 @@
 </header>
 <main>
 <div class="container" style="margin-top: 100px; text-align: right; width: 500px;"> 
-<%= request.getAttribute("mensagemErro")==null?"":request.getAttribute("mensagemErro") %>
+<%= request.getAttribute("mensagem")==null?"":request.getAttribute("mensagem") %>
 <h5>Insira as informações do cliente</h5><hr><br>
-<form action="SvClientePesquisar" method="post">
-<label>Nome: <input type="text" name="nomeCliente" value="<%= request.getParameter("nomeCliente")==null?"":request.getParameter("nomeCliente")%>"></label><br>
-<label>Idade: <input type="text" name="idade" value="<%= request.getParameter("idade")==null?"":request.getParameter("idade")%>"></label><br>
-<label>Sexo: <input type="text" name="sexo" value="<%= request.getParameter("sexo")==null?"":request.getParameter("sexo")%>"></label><br>
-<label>Senha: <input type="text" name="senha" value="<%= request.getParameter("senha")==null?"":request.getParameter("senha")%>"></label><br>
-<label>CPF: <input type="text" name="cpf" value="<%= request.getParameter("cpf")==null?"":request.getParameter("cpf")%>"></label><br>
-<input type="submit" value="Pesquisar"/>
+<%= request.getAttribute("mensagemParaProgramador")==null?"":request.getAttribute("mensagemParaProgramador") %>
+<form action="SvClienteExcluir" method="post">
+<label>CPF: <input type="text" name="cpf"></label><br>
+<input type="submit" value="Excluir"/>
 </form>
  </div>
 </main>

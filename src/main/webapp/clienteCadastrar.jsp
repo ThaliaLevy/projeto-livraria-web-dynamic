@@ -18,32 +18,29 @@
     <a class="navbar-brand" href="index.html" style="color: rgb(173, 169, 169)">Principal</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="livro.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
           Livro
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Cadastrar</a>
-          <a class="dropdown-item" href="#">Pesquisar</a>
           <a class="dropdown-item" href="#">Excluir</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="clienteCadastrar.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
           Cliente
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="clienteCadastrar.jsp">Cadastrar</a>
-          <a class="dropdown-item" href="clientePesquisar.jsp">Pesquisar</a>
-          <a class="dropdown-item" href="cliente.jsp">Excluir</a>
+          <a class="dropdown-item" href="clienteExcluir.jsp">Excluir</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="funcionario.jsp" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(173, 169, 169)">
           Funcionário
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Cadastrar</a>
-          <a class="dropdown-item" href="#">Pesquisar</a>
           <a class="dropdown-item" href="#">Excluir</a>
         </div>
       </li>
@@ -53,7 +50,9 @@
 </header>
 <main>
 <div class="container" style="margin-top: 100px; text-align: right; width: 500px;"> 
-<%= request.getAttribute("mensagemErro")==null?"":request.getAttribute("mensagemErro") %>
+<%= request.getAttribute("mensagem")==null?"":request.getAttribute("mensagem") %>
+<%= request.getAttribute("mensagemParaProgramador")==null?"":request.getAttribute("mensagemParaProgramador") %>
+<br><br>
 <h5>Insira as informações do cliente</h5><hr><br>
 <form action="SvClienteCadastrar" method="post">
 <label>Nome: <input type="text" name="nomeCliente" value="<%= request.getParameter("nomeCliente")==null?"":request.getParameter("nomeCliente")%>"></label><br>
