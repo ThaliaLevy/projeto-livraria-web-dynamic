@@ -32,6 +32,7 @@ public class SvClienteExcluir extends HttpServlet {
 
 		//mensagem de erro não está aparecendo quando não há o cpf cadastrado.
 		//verificar como resolver isso.
+		// https://pt.stackoverflow.com/questions/70247/formas-de-obter-valores-do-banco-com-resultset
 		request.setAttribute("mensagem", mensagem);
 		request.getRequestDispatcher("clienteExcluir.jsp").forward(request, response);
 	}
