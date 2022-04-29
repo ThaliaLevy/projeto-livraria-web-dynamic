@@ -1,5 +1,7 @@
 package model.persistencia;
 
+import java.sql.ResultSet;
+
 import model.entidade.Cliente;
 
 public class PCliente {
@@ -47,11 +49,17 @@ public class PCliente {
 			cn.ps = cn.conn.prepareStatement(cn.sql);
 			cn.ps.execute();
 
-			cn.sql = "delete from Cliente where cpf = ?;";
+			cn.sql = "select * from Cliente where cpf = ?;";
 			cn.ps = cn.conn.prepareStatement(cn.sql);
 			cn.ps.setString(1, cpf);
-			cn.ps.execute();
 
+			ResultSet result = cn.ps.executeQuery();
+			
+			Cliente c = new Cliente();
+			while(result.next()) {
+			 c.setNomeCliente(result.getString("nome"));
+			}
+			
 			cn.conn.close();
 			
 			return true;

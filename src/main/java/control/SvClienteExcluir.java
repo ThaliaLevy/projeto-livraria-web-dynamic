@@ -23,6 +23,7 @@ public class SvClienteExcluir extends HttpServlet {
 
 		if (c.excluirPeloCpf(cpf) == true) {
 			mensagem = "Excluído com sucesso!";
+			String nomeCliente = c.getNomeCliente();
 
 		} else {
 			PCliente pc = new PCliente();
@@ -34,7 +35,7 @@ public class SvClienteExcluir extends HttpServlet {
 		//verificar como resolver isso.
 		// https://pt.stackoverflow.com/questions/70247/formas-de-obter-valores-do-banco-com-resultset
 		request.setAttribute("mensagem", mensagem);
-		request.getRequestDispatcher("clienteExcluir.jsp").forward(request, response);
+		request.getRequestDispatcher("cliente.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

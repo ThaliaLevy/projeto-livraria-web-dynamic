@@ -26,6 +26,7 @@ public class SvClienteCadastrar extends HttpServlet {
 		
 		if(c.guardarDados() == true) {
 			mensagem = "Cadastrado com sucesso!";
+			nomeCliente = c.getNomeCliente();
 			
 		}else {
 			mensagem = "Erro ao tentar cadastrar.";

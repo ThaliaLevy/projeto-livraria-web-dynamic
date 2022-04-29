@@ -1,26 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Principal</title>
+<title></title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 <body style="color: white; background-color:  rgb(39, 34, 33); font-family: 'Courier New', Courier, monospace;">
 <header>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(36, 24, 22);">
-
   <a class="navbar-brand" href="#" style="color: white">Principal</a>
    <a class="nav-link" href="login.jsp" style="color: rgb(173, 169, 169)">Login</a>
-   
 </nav>
 </header>
 <main>
-<div class="container" style="margin-top: 110px; text-align: center;"><h5>
-  Seja bem vindo ao sistema de cadastro da livraria! <br> Para realizar um cadastro, basta 
-  selecionar uma das opções do menu de navegação acima.</h5>
-  <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Imagem-Livro-PNG-1024x1024.png" style="width: 150px">
+<div class="container" style="margin-top: 110px; text-align: right;">
+<div style="margin-right: 30%">
+<label>CPF: <input type="text" name="cpf" value="<%= request.getParameter("cpf")==null?"":request.getParameter("cpf")%>"></label><br>
+<label>Senha: <input type="text" name="senha" value="<%= request.getParameter("senha")==null?"":request.getParameter("senha")%>"></label><br>
+<input type="submit" formaction="SvClienteLocalizar" formmethod="get" value="Login"/>
 </div>
+<br><br>
+</div>
+ 
+ </div>
 </main>
 <footer>
 <hr style="margin-top: 185px;">

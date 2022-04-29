@@ -46,10 +46,11 @@
 <label>CPF: <input type="text" name="cpf" value="<%= request.getParameter("cpf")==null?"":request.getParameter("cpf")%>"></label><br>
 <br><br>
 </div>
-<input type="submit" value="Cadastrar"/>
-<input type="submit" value="Localizar"/>
-<input type="submit" value="Excluir"/>
-<input type="submit" value="Alterar"/>
+<input type="submit" formaction="SvClienteExcluir" formmethod="get" value="Excluir"/>
+<!-- 
+<input type="submit" formaction="SvClienteLocalizar" formmethod="get" value="Localizar"/>
+<input type="submit" formaction="SvClienteCadastrar" formmethod="get" value="Cadastrar"/>
+<input type="submit" formaction="SvClienteAlterar" formmethod="get" value="Alterar"/>   -->
 </form>
  </div>
 </main>
