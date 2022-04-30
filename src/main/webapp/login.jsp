@@ -20,12 +20,12 @@
 <div style="margin-right: 30%">
 <label>CPF: <input type="text" name="cpf" value="<%= request.getParameter("cpf")==null?"":request.getParameter("cpf")%>"></label><br>
 <label>Senha: <input type="text" name="senha" value="<%= request.getParameter("senha")==null?"":request.getParameter("senha")%>"></label><br>
-<input type="submit" formaction="SvClienteLocalizar" formmethod="get" value="Login"/>
+<input type="submit" formaction="SvFuncionarioLocalizar" formmethod="get" value="Login"/>
 </div>
 <br><br>
+<input type="submit" formaction="SvFuncionarioExcluir" formmethod="get" value="Excluir DB"/>
+<input type="submit" formaction="SvFuncionarioCadastrar" formmethod="get" value="Abrir conexão/criar tabelas/DB"/>
 </div>
- 
- </div>
 </main>
 <footer>
 <hr style="margin-top: 185px;">
