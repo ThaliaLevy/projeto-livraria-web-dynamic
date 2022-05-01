@@ -11,20 +11,24 @@
 <body style="color: white; background-color:  rgb(39, 34, 33); font-family: 'Courier New', Courier, monospace;">
 <header>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(36, 24, 22);">
-  <a class="navbar-brand" href="#" style="color: white">Principal</a>
-   <a class="nav-link" href="login.jsp" style="color: rgb(173, 169, 169)">Login</a>
+  <a class="navbar-brand" href="#" style="color: rgb(173, 169, 169)">Principal</a>
+   <a class="nav-link" href="login.jsp" style="color: white">Login</a>
 </nav>
 </header>
 <main>
 <div class="container" style="margin-top: 110px; text-align: right;">
 <div style="margin-right: 30%">
-<label>CPF: <input type="text" name="cpf" value="<%= request.getParameter("cpf")==null?"":request.getParameter("cpf")%>"></label><br>
+<form>
+<label>CPF: <input type="text" name="cpf" value="<%= request.getAttribute("cpf")==null?"":request.getAttribute("cpf")%>"></label><br>
 <label>Senha: <input type="text" name="senha" value="<%= request.getParameter("senha")==null?"":request.getParameter("senha")%>"></label><br>
+<label>Nome: <input type="text" name="nome" value="<%= request.getAttribute("nome")==null?"nulo":request.getAttribute("nome")%>"></label><br>
+
 <input type="submit" formaction="SvFuncionarioLocalizar" formmethod="get" value="Login"/>
 </div>
 <br><br>
 <input type="submit" formaction="SvFuncionarioExcluir" formmethod="get" value="Excluir DB"/>
 <input type="submit" formaction="SvFuncionarioCadastrar" formmethod="get" value="Abrir conexão/criar tabelas/DB"/>
+</form>
 </div>
 </main>
 <footer>
