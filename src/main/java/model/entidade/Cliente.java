@@ -27,13 +27,14 @@ public class Cliente {
 		}
 	}
 	
-	public boolean excluirPeloCpf(String cpf) {
+	public Cliente excluirPeloCpf(String cpf) {
 		PCliente pc = new PCliente();
-		
-		if (pc.excluirDados(cpf) == true) {
-			return true;
+
+		Cliente teste = pc.excluirDados(cpf);
+		if (teste != null) {
+			return teste;
 		} else {
-			return false;
+			return null;
 		}
 	}
 

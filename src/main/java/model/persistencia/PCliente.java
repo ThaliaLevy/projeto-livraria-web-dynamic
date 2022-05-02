@@ -41,7 +41,7 @@ public class PCliente {
 		}
 	}
 	
-	public boolean excluirDados(String cpf) {
+	public Cliente excluirDados(String cpf) {
 		
 		Conexao cn = new Conexao();
 		try {
@@ -56,16 +56,17 @@ public class PCliente {
 			ResultSet result = cn.ps.executeQuery();
 			
 			Cliente c = new Cliente();
-			while(result.next()) {
+			result.first();
+			//while(result.next()) {
 			 c.setNomeCliente(result.getString("nome"));
-			}
+		//	}
 			
 			cn.conn.close();
 			
-			return true;
+			return c;
 		} catch (Exception e) {
 			mensagem = "Erro: " + e;
-			return false;
+			return null;
 		}
 	}
 }
