@@ -20,9 +20,8 @@
 <div style="margin-right: 30%">
 <form>
 <label>CPF: <input type="text" name="cpf" value="<%= request.getAttribute("cpf")==null?"":request.getAttribute("cpf")%>"></label><br>
-<label>Senha: <input type="text" name="senha" value="<%= request.getParameter("senha")==null?"":request.getParameter("senha")%>"></label><br>
-<label>Nome: <input type="text" name="nome" value="<%= request.getAttribute("nome")==null?"nulo":request.getAttribute("nome")%>"></label><br>
-
+<label>Senha: <input type="text" name="senha" value="<%= request.getAttribute("senha")==null?"":request.getAttribute("senha")%>"></label><br>
+<p><%= request.getAttribute("mensagem")==null?"":request.getAttribute("mensagem")%></p>
 <input type="submit" formaction="SvFuncionarioLocalizar" formmethod="get" value="Login"/>
 </div>
 <br><br>

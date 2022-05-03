@@ -3,13 +3,14 @@ package model.entidade;
 import model.persistencia.PCliente;
 
 public class Cliente {
-	private String nomeCliente, sexo, senha, idade, cpf;
+	private String id, nomeCliente, sexo, senha, idade, cpf;
 
 	public Cliente() {
 
 	}
 
-	public Cliente(String nomeCliente, String idade, String sexo, String senha, String cpf) {
+	public Cliente(String id, String nomeCliente, String idade, String sexo, String senha, String cpf) {
+		this.id = id;
 		this.nomeCliente = nomeCliente;
 		this.idade = idade;
 		this.sexo = sexo;
@@ -27,12 +28,15 @@ public class Cliente {
 		}
 	}
 	
-	public Cliente excluirPeloCpf(String cpf) {
+	public Cliente localizarPeloCpf(String cpf, String senha) {
 		PCliente pc = new PCliente();
 
-		Cliente teste = pc.excluirDados(cpf);
-		if (teste != null) {
-			return teste;
+		Cliente cliente = pc.localizarDados(cpf);
+		if (cliente != null) {
+			if(cliente.getSenha().equals(senha)) {
+				return cliente;
+			}
+			return null;
 		} else {
 			return null;
 		}

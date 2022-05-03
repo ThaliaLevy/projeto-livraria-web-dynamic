@@ -41,7 +41,7 @@ public class PCliente {
 		}
 	}
 	
-	public Cliente excluirDados(String cpf) {
+	public Cliente localizarDados(String cpf) {
 		
 		Conexao cn = new Conexao();
 		try {
@@ -57,9 +57,8 @@ public class PCliente {
 			
 			Cliente c = new Cliente();
 			result.first();
-			//while(result.next()) {
-			 c.setNomeCliente(result.getString("nome"));
-		//	}
+			 c.setCpf(result.getString("cpf"));
+			 c.setSenha(result.getString("senha"));
 			
 			cn.conn.close();
 			

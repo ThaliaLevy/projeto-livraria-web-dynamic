@@ -22,7 +22,7 @@ public class SvClienteCadastrar extends HttpServlet {
 		String cpf = request.getParameter("cpf");
 		String mensagem, mensagemParaProgramador;
 
-		Cliente c = new Cliente(nomeCliente, idade, sexo, senha, cpf);
+		/* Cliente c = new Cliente(nomeCliente, idade, sexo, senha, cpf);
 		
 		if(c.guardarDados() == true) {
 			mensagem = "Cadastrado com sucesso!";
@@ -38,7 +38,7 @@ public class SvClienteCadastrar extends HttpServlet {
 		}
 		
 		request.setAttribute("mensagem", mensagem);
-		request.getRequestDispatcher("clienteCadastrar.jsp").forward(request, response);
+		request.getRequestDispatcher("clienteCadastrar.jsp").forward(request, response); */
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
