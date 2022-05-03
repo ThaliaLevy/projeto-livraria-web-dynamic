@@ -30,29 +30,16 @@ public class SvFuncionarioLocalizar extends HttpServlet {
 		Cliente cliente = c.localizarPeloCpf(cpf, senha);
 		
 		if(cliente != null) {
-			request.setAttribute("cpf", cliente.getCpf());
-			request.setAttribute("senha", cliente.getSenha());
+			//request.setAttribute("cpf", cliente.getCpf());
+			//request.setAttribute("senha", cliente.getSenha());
+
+			request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
 		}else {
 			mensagem = "Dados incorretos. Por favor, tente novamente.";
-		}
 
-		request.setAttribute("mensagem", mensagem);
-		request.getRequestDispatcher("login.jsp").forward(request, response);
-		
-		  /* contando tamanho da tabela, numero de colunas, etc
-			 
-			Statement stm = cn.conn.createStatement();
-			ResultSet result = stm.executeQuery("SELECT * FROM Cliente");
-			ResultSetMetaData rsmd = result.getMetaData();
-			result.next();
-			
-			int quantidadeColunas = rsmd.getColumnCount();
-			
-			for(int i = 1; i <= quantidadeColunas; i++) {
-				rsmd.getColumnName(1);
-				rsmd.getTableName(1);
-				rsmd.getColumnDisplaySize(1);
-			} */
+			request.setAttribute("mensagem", mensagem);
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
