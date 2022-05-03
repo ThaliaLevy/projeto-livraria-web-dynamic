@@ -22,24 +22,37 @@ public class SvFuncionarioLocalizar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String cpf = request.getParameter("cpf");
 		String senha = request.getParameter("senha");
+		String tela = request.getParameter("tela");
 		String mensagem = "";
 		Cliente c = new Cliente();
 		
-		//recebendo valores de uma instância na variável 'teste', do tipo 'Cliente'
-
-		Cliente cliente = c.localizarPeloCpf(cpf, senha);
 		
-		if(cliente != null) {
-			//request.setAttribute("cpf", cliente.getCpf());
-			//request.setAttribute("senha", cliente.getSenha());
+		// testei e deu certo! proximo passo é inserir um name com o value igual ao nome da tela
+		//e criar um switch case para verificar quais metodos do servlet devem rodar
+		
+		if(tela == ("login")) {
+			//recebendo valores de uma instância na variável 'teste', do tipo 'Cliente'
 
-			request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
+			Cliente cliente = c.localizarPeloCpf(cpf, senha);
+			
+			if(cliente != null) {
+				//request.setAttribute("cpf", cliente.getCpf());
+				//request.setAttribute("senha", cliente.getSenha());
+
+				request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
+			}else {
+				mensagem = "Dados incorretos. Por favor, tente novamente.";
+
+				request.setAttribute("mensagem", mensagem);
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+			}
 		}else {
-			mensagem = "Dados incorretos. Por favor, tente novamente.";
 
-			request.setAttribute("mensagem", mensagem);
+			request.setAttribute("mensagem", "nao foi");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
+		
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

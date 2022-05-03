@@ -11,17 +11,13 @@
 <body style="color: white; background-color:  rgb(39, 34, 33); font-family: 'Courier New', Courier, monospace;">
 <header>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(36, 24, 22);">
-
   <a class="navbar-brand" href="menuPrincipal.jsp" style="color: white">Principal</a>
-   <a class="nav-link" href="login.jsp" style="color: rgb(173, 169, 169)">Login</a>
-   
+   <a class="nav-link" href="funcionario.jsp" style="color: rgb(173, 169, 169)">Funcionário</a>
 </nav>
 </header>
 <main>
-<div class="container" style="margin-top: 110px; text-align: center;"><h5>
-  Seja bem vindo ao sistema de cadastro da livraria! <br> Para realizar um cadastro, basta 
-  selecionar uma das opções do menu de navegação acima.</h5>
-  <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Imagem-Livro-PNG-1024x1024.png" style="width: 150px">
+<div class="container" style="margin-top: 110px; text-align: center;">
+
 </div>
 </main>
 <footer>
