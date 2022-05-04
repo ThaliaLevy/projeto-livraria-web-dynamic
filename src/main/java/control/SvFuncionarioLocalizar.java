@@ -35,7 +35,9 @@ public class SvFuncionarioLocalizar extends HttpServlet {
 			Cliente cliente = c.localizarPeloCpf(cpf, senha);
 				
 				if(cliente != null) {
-					request.getRequestDispatcher("menuPrincipal.jsp").forward(request, response);
+					request.setAttribute("cpf", "");
+					request.setAttribute("senha", "");
+					request.getRequestDispatcher("funcionario.jsp").forward(request, response);
 				}else {
 					mensagem = "Dados incorretos. Por favor, tente novamente.";
 
@@ -43,9 +45,15 @@ public class SvFuncionarioLocalizar extends HttpServlet {
 					request.getRequestDispatcher("login.jsp").forward(request, response);
 				}
 		}else {
-			if(tela.equals("cliente")) {
+			if(tela.equals("funcionario")) {
+				mensagem = "foi";
+				request.setAttribute("mensagem", mensagem);
+				request.getRequestDispatcher("funcionario.jsp").forward(request, response);
+			}else {
+				mensagem = "Dados incorretos. Por favor, tente novamente.";
 
-				request.getRequestDispatcher("cliente.jsp").forward(request, response);
+				request.setAttribute("mensagem", mensagem);
+				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
 		}		
 	}

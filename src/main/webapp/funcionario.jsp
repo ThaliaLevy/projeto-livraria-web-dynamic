@@ -19,15 +19,16 @@
 </header>
 <main>
 <div class="container" style="margin-top: 90px; text-align: right; width: 500px;">
-<h5>Insira as informações do funcionário</h5><hr><br>
+<h5>Dados do funcionário</h5><hr><br>
 <form>
-<label>Nome: <input type="text" name="nomeFuncionario" value="<%= request.getParameter("nomeFuncionario")==null?"":request.getParameter("nomeFuncionario")%>"></label><br>
-<label>Idade: <input type="text" name="idade" value="<%= request.getParameter("idade")==null?"":request.getParameter("idade")%>"></label><br>
-<label>Salário: <input type="text" name="salario" value="<%= request.getParameter("salario")==null?"":request.getParameter("salario")%>"></label><br>
-<label>Sexo: <input type="text" name="sexo" value="<%= request.getParameter("sexo")==null?"":request.getParameter("sexo")%>"></label><br>
-<label>Senha: <input type="text" name="senha" value="<%= request.getParameter("senha")==null?"":request.getParameter("senha")%>"></label><br>
-<label>CPF: <input type="text" name="cpf" value="<%= request.getParameter("cpf")==null?"":request.getParameter("cpf")%>"></label><br>
-<label>Matrícula: <input type="text" name="matricula" value="<%= request.getParameter("matricula")==null?"":request.getParameter("matricula")%>"></label><br>
+<input type="hidden" name="tela" value="funcionario">
+<label>Nome: <input type="text" name="nomeFuncionario" value="<%= request.getAttribute("nomeFuncionario")==null?"":request.getAttribute("nomeFuncionario")%>"></label><br>
+<label>Idade: <input type="text" name="idade" value="<%= request.getAttribute("idade")==null?"":request.getAttribute("idade")%>"></label><br>
+<label>Salário: <input type="text" name="salario" value="<%= request.getAttribute("salario")==null?"":request.getAttribute("salario")%>"></label><br>
+<label>Sexo: <input type="text" name="sexo" value="<%= request.getAttribute("sexo")==null?"":request.getAttribute("sexo")%>"></label><br>
+<label>Senha: <input type="text" name="senha" value="<%= request.getAttribute("senha")==null?"":request.getAttribute("senha")%>"></label><br>
+<label>CPF: <input type="text" name="cpf" value="<%= request.getAttribute("cpf")==null?"":request.getAttribute("cpf")%>"></label><br>
+<label>Matrícula: <input type="text" name="matricula" value="<%= request.getAttribute("matricula")==null?"":request.getAttribute("matricula")%>"></label><br>
 <br><br>
 <div style="margin-right: -20%">
 <input type="submit" formaction="SvFuncionarioLocalizar" formmethod="get" value="Localizar"/>

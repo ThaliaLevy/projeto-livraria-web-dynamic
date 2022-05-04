@@ -19,8 +19,9 @@
 </header>
 <main>
 <div class="container" style="margin-top: 90px; text-align: right; width: 500px;">
-<h5>Insira as informações do funcionário</h5><hr><br>
+<h5>Dados do cliente</h5><hr><br>
 <form>
+<input type="hidden" value="cliente">
 <label>Nome: <input type="text" name="nomeFuncionario" value="<%= request.getParameter("nomeFuncionario")==null?"":request.getParameter("nomeFuncionario")%>"></label><br>
 <label>Idade: <input type="text" name="idade" value="<%= request.getParameter("idade")==null?"":request.getParameter("idade")%>"></label><br>
 <label>Salário: <input type="text" name="salario" value="<%= request.getParameter("salario")==null?"":request.getParameter("salario")%>"></label><br>
