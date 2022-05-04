@@ -41,7 +41,7 @@ public class PCliente {
 		}
 	}
 	
-	public Cliente localizarDados(String cpf) {
+	public Cliente localizarDados(String cpf, String senha) {
 		
 		Conexao cn = new Conexao();
 		try {
@@ -49,9 +49,10 @@ public class PCliente {
 			cn.ps = cn.conn.prepareStatement(cn.sql);
 			cn.ps.execute();
 
-			cn.sql = "select * from Cliente where cpf = ?;";
+			cn.sql = "select * from Cliente where cpf = ? and senha = ?;";
 			cn.ps = cn.conn.prepareStatement(cn.sql);
 			cn.ps.setString(1, cpf);
+			cn.ps.setString(2, senha);
 
 			ResultSet result = cn.ps.executeQuery();
 			

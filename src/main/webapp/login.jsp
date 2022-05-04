@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>Login</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
@@ -19,16 +19,13 @@
 <div class="container" style="margin-top: 110px; text-align: right;">
 <div style="margin-right: 30%">
 <form>
-<p name="tela" value="login"></p>
+<input type="hidden" name="tela" value="login">
 <label>CPF: <input type="text" name="cpf" value="<%= request.getAttribute("cpf")==null?"":request.getAttribute("cpf")%>"></label><br>
 <label>Senha: <input type="text" name="senha" value="<%= request.getAttribute("senha")==null?"":request.getAttribute("senha")%>"></label><br>
 <p><%= request.getAttribute("mensagem")==null?"":request.getAttribute("mensagem")%></p>
 <input type="submit" formaction="SvFuncionarioLocalizar" formmethod="get" value="Login"/>
-</div>
-<br><br>
-<input type="submit" formaction="SvFuncionarioExcluir" formmethod="get" value="Excluir DB"/>
-<input type="submit" formaction="SvFuncionarioCadastrar" formmethod="get" value="Abrir conexão/criar tabelas/DB"/>
 </form>
+</div>
 </div>
 </main>
 <footer>

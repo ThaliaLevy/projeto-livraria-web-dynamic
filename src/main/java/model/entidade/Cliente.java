@@ -31,12 +31,12 @@ public class Cliente {
 	public Cliente localizarPeloCpf(String cpf, String senha) {
 		PCliente pc = new PCliente();
 
-		Cliente cliente = pc.localizarDados(cpf);
+		Cliente cliente = pc.localizarDados(cpf, senha);
 		if (cliente != null) {
-			if(cliente.getSenha().equals(senha)) {
+	//		if(cliente.getSenha().equals(senha)) {
 				return cliente;
-			}
-			return null;
+	//		}
+	//		return null;
 		} else {
 			return null;
 		}

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Funcionario</title>
+<title>Cliente</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
@@ -12,8 +12,8 @@
 <header>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(36, 24, 22);">
   <a class="navbar-brand" href="menuPrincipal.jsp" style="color: rgb(173, 169, 169)">Principal</a>
-   <a class="nav-link" href="funcionario.jsp" style="color: rgb(173, 169, 169)">Cliente</a>
-   <a class="nav-link" href="funcionario.jsp" style="color: white">Funcionário</a>
+   <a class="nav-link" href="funcionario.jsp" style="color: white">Cliente</a>
+   <a class="nav-link" href="funcionario.jsp" style="color: rgb(173, 169, 169)">Funcionário</a>
    <a class="nav-link" href="funcionario.jsp" style="color: rgb(173, 169, 169)">Livro</a>
 </nav>
 </header>
